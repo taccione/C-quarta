@@ -1,0 +1,39 @@
+// Diego Renesto
+// 24 Settembre 2024
+/* Progettare un algoritmo che effettui le seguenti operazioni:
+• continui a leggere da tastiera una serie di terne di valori interi A, B e C finchè non vengono inseriti dei valori tali per cui A + B < C
+• conteggi il numero di volte in cui la differenza tra A e B è pari, dispari, e quando è nulla
+• prima di terminare, visualizzi il valore dei valori conteggiati
+*/
+#include <stdio.h>
+int main()
+{
+    // Dichiarazione delle variabili
+    int a, b, c;
+    int somma;
+    int contPari = 0, contDispari = 0, contNull = 0; // contatore che conteggi quante volte la somma tra a e b è pari, dispari o nulla
+
+    do
+    {
+        printf("Inserisci 3 numeri: \n");
+        scanf("%d", &a);
+        scanf("%d", &b);
+        scanf("%d", &c);
+
+        somma = a + b;
+        if (somma % 2 == 0)
+        {
+            contPari++;
+        }
+        else if (somma % 2 != 0)
+        {
+            contDispari++;
+        }
+        else
+        {
+            contNull++;
+        }
+    } while (a + b >= c);
+
+    printf("La somma e' %d volte pari, %d volte dispari e %d volte nulla ", contPari, contDispari, contNull);
+}
