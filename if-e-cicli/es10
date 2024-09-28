@@ -1,0 +1,65 @@
+// Diego Renesto
+// 28 Settembre 2024
+/* Una birreria a fine serata deve conteggiare l’incasso. La cassiera accende il software gestionale il quale le chiede di inserire una alla volta le consumazioni servite.
+Le consumazioni si dividono in bevande e ristorazione. La cassiera per ogni consumazione deve inserire la tipologia di consumazione e il suo importo.
+
+Quando la cassiera inserisce la stringa “esci” il software deve mostrare a video le seguenti informazioni:
+1.	La media dell’incasso delle bevande
+2.	La media dell’incasso della ristorazione
+3.	Deve indicare se sono state vendute più bevande o più ristorazioni*/
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char tipo[20];
+    float importo;
+    int nBevande = 0, nRistorazione = 0;
+    float totBevande = 0, totRistorazione = 0;
+
+    // Ciclo per inserire le consumazioni fino a "esci"
+    do
+    {
+        printf("Inserisci 'bevanda', 'ristorazione' o 'esci' per terminare: ");
+        scanf("%s", tipo);
+
+        if (strcmp(tipo, "esci") != 0)
+        {
+            printf("Inserisci l'importo: ");
+            scanf("%f", &importo);
+
+            if (strcmp(tipo, "bevanda") == 0)
+            {
+                totBevande += importo;
+                nBevande++;
+            }
+            else if (strcmp(tipo, "ristorazione") == 0)
+            {
+                totRistorazione += importo;
+                nRistorazione++;
+            }
+        }
+    } while (strcmp(tipo, "esci") != 0);
+
+    // Stampa risultati
+    // printf("\n--- Riepilogo ---\n");
+    if (nBevande > 0)
+        printf("Media bevande: %.2f\n", totBevande / nBevande);
+    if (nRistorazione > 0)
+        printf("Media ristorazione: %.2f\n", totRistorazione / nRistorazione);
+
+    if (nBevande > nRistorazione)
+    {
+        printf("Sono state vendute piu' bevande\n");
+    }
+    else if (nRistorazione > nBevande)
+    {
+        printf("Sono state vendute piu' ristorazioni\n");
+    }
+    else
+    {
+        printf("Stesso numero di bevande e ristorazioni.\n");
+    }
+
+    return 0;
+}
