@@ -41,8 +41,6 @@ int main()
         }
     } while (strcmp(tipo, "esci") != 0);
 
-    // Stampa risultati
-    // printf("\n--- Riepilogo ---\n");
     if (nBevande > 0)
         printf("Media bevande: %.2f\n", totBevande / nBevande);
     if (nRistorazione > 0)
