@@ -7,7 +7,7 @@ minori o uguali a N.
 int main(int argc, char *argv[])
 {
     // Dichiarazione delle variabili
-    int n, dispari;
+    int n;
 
     do
     {
