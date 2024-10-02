@@ -26,4 +26,6 @@ int main(int argc, char *argv[])
         numDaGenerare++;
         printf("%d ", numDaGenerare);
     }
+
+return 0;
 }
