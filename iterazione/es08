@@ -20,8 +20,8 @@ int main(int argc, char *argv[])
 
     do
     {
-        n--;
         printf("%d ", n);
+        n--;
         i++;
     } while (i = n);
 
