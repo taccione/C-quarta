@@ -1,0 +1,29 @@
+// Diego Renesto
+// 3 Ottobre 2024
+/* Dati due numeri interi e positivi N1 e N2 con N2>N1, generare e
+visualizzare in ordine decrescente i numeri compresi tra N1 e N2.
+*/
+#include <stdio.h>
+int main(int argc, char *argv[])
+{
+
+    // Dichiarazione delle variabili
+    int n1, n2;
+
+    do
+    {
+        printf("Inserisci il primo numero intero positivo: ");
+        scanf("%d", &n1);
+        printf("Inserisci il secondo numero intero positivo: ");
+        scanf("%d", &n2);
+
+    } while (n1 < 0 || n2 < 0 || n1 > n2);
+
+    while (n1 < n2)
+    {
+        printf("%d ", n2);
+        n2--;
+    }
+
+    return 0;
+}
