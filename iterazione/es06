@@ -1,0 +1,25 @@
+// Diego Renesto
+// 3 Ottobre 2024
+/* Dato N un numero intero positivo, generare e visualizzare in ordine
+crescente i numeri compresi maggiori uguali di -N e minori uguali di N.
+*/
+#include <stdio.h>
+int main(int argc, char *argv[])
+{
+    // Dichiarazione delle variabili
+    int n;
+
+    do
+    {
+        printf("Inserisci un numero intero positivo: ");
+        scanf("%d", &n);
+    } while (n < 0);
+
+    for (int i = -n; i < n; i++)
+    {
+
+        printf("%d ", i);
+    }
+
+    return 0;
+}
