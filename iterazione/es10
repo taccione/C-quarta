@@ -17,7 +17,8 @@ int main(int argc, char *argv[])
     } while (n < 0);
 
     int i = 1;
-    while (i < n) {
+    while (i < n)
+    {
         printf("%d ", i);
         i++;
         somma += i;
