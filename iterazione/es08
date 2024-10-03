@@ -1,0 +1,29 @@
+// Diego Renesto
+// 3 Ottobre 2024
+/* Dato N un numero intero positivo, generare e visualizzare in ordine
+decrescente i primi N numeri interi positivi.
+*/
+#include <stdio.h>
+int main(int argc, char *argv[])
+{
+
+    // Dichiarazione delle variabili
+    int n;
+
+    do
+    {
+        printf("Inserisci un numero intero positivo: ");
+        scanf("%d", &n);
+    } while (n < 0);
+
+    int i = 0;
+
+    do
+    {
+        n--;
+        printf("%d ", n);
+        i++;
+    } while (i = n);
+
+    return 0;
+}
