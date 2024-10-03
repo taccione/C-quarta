@@ -1,0 +1,31 @@
+// Diego Renesto
+// 3 Ottobre 2024
+/* Dato N un numero intero positivo, calcolare e visualizzare la
+somma dei primi N numeri pari.
+*/
+#include <stdio.h>
+int main(int argc, char *argv)
+{
+
+    // Dichiarazione delle variabili
+    int n, somma = 0;
+
+    do
+    {
+        printf("Inserisci un numero intero positivo: ");
+        scanf("%d", &n);
+    } while (n < 0);
+
+    int i = 0;
+
+    do
+    {
+        somma += i;
+        i += 2;
+
+    } while (i < n);
+
+    printf("La somma e': %d", somma);
+
+    return 0;
+}
