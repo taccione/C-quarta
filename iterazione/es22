@@ -1,0 +1,29 @@
+// Diego Renesto
+// 8 Ottobre 2024
+/* Dato un numero N calcolare e visualizzare tutte le coppie di numeri minori di N che
+danno per somma il numero stesso. Non considerare la proprietà commutativa. 
+*/
+#include <stdio.h>
+
+int main(int argc, char *argv[])
+{
+
+	int n;
+
+	printf("Inserisci un numero: ");
+	scanf("%d", &n);
+	
+    int i = n - 1;
+	int j = 1;
+
+	do
+	{
+		printf("%d+%d=%d\n", j, i, n);
+		j++;
+		i--;
+	} while (j <= n);
+
+
+
+	return 0;
+}
