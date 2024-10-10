@@ -1,0 +1,38 @@
+// Diego Renesto
+// 10 Ottobre 2024
+/* Si scriva un programma che calcoli l’elevazione a potenza del valore intero
+passato come primo argomento per il secondo argomento intero.
+
+Esempio:
+
+$./es 2 3
+2 ^ 3 = 8
+*/
+#include <stdio.h>
+#include <math.h>
+int main(int argc, char *argv[])
+{
+
+    if (argc != 3)
+    {
+        printf("Errore argomenti!");
+        return 0;
+    }
+
+    int n = atoi(argv[1]);
+    int p = atoi(argv[2]);
+
+    int n2 = pow(n, p);
+
+    if (n <= 0 || p <= 0)
+    {
+        printf("argv[1] deve essere maggiore di 1\n");
+        return 0;
+    }
+
+    if (n > 0 || p > 0)
+    {
+
+        printf("%d ^ %d = %d", n, p, n2);
+    }
+}
