@@ -26,11 +26,11 @@ int main(int argc, char *argv[])
 
     if (n <= 0 || p <= 0)
     {
-        printf("argv[1] deve essere maggiore di 1\n");
+        printf("argv[1] e argv[2] devono essere maggiori di 1\n");
         return 0;
     }
 
-    if (n > 0 || p > 0)
+    if (n > 0 && p > 0)
     {
 
         printf("%d ^ %d = %d", n, p, n2);
