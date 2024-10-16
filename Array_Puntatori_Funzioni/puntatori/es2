@@ -1,0 +1,23 @@
+/* Dati due numeri si scriva in linguaggio C una funzione di tipo void denominata scambia,
+che dati in input 2 numeri li scambi.
+*/
+#include <stdio.h>
+void scambia(int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+int main(int argc, char *argv[])
+{
+    int a, b;
+    printf("Inserisci due numeri: \n");
+    scanf("%d", &a);
+    scanf("%d", &b);
+
+    scambia(&a, &b);
+    printf("Ora a vale: %d\n", a);
+    printf("Ora b vale: %d\n", b);
+
+    return 0;
+}
