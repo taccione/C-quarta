@@ -1,0 +1,51 @@
+/* Si scriva un programma in linguaggio C che implementi una funzione
+denominata palindroma che prenda in input una stringa e restituisca
+1 se la stringa è palindroma altrimenti -1
+
+esempio:
+$ ./a.out anna
+$ anna è una stringa palindroma
+
+esempio:
+$ ./a.out ciao
+$ ciao non è una stringa palindroma
+*/
+#include <stdio.h>
+#include <string.h>
+
+int palindroma(char s[])
+{
+    int i, len = strlen(s) - 1;
+
+    for (i = 0; i <= len; i++) // scorre la stringa
+    {
+        if (s[i] != s[len])  // non è palindroma
+        {
+            return -1;
+        }
+        len--;  // inverte la stringa
+    }
+
+    return 1;
+}
+
+int main(int argc, char *argv[])
+{
+
+    if (argc != 2)  // controllo argomenti
+    {
+        printf("Errore argomenti!");
+        return -1;
+    }
+
+    if (palindroma(argv[1]) > 0)  // argv[1] è una stringa palindroma
+    {
+        printf("%s è una stringa palindroma", argv[1]);
+    }
+    else  // argv[1] non è una stringa palindroma
+    {
+        printf("%s non è una parola palindroma", argv[1]);
+    }
+
+    return 0;
+}
