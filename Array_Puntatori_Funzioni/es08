@@ -1,0 +1,38 @@
+/* Progettare un algoritmo che effettui la lettura da tastiera di una serie di valori numerici. Il
+programma termina quando il dato immesso è pari a zero. Calcolare e stampare la media dei valori
+inseriri. Inoltre, stampare la sequenza di valori in ordine inverso rispetto a quello di inserimento. Un
+valore dovrà essere stampato soltanto se maggiore della media calcolata.
+*/
+#include <stdio.h>
+#define DIM 100
+int main(int argc, char *argv[])
+{
+    int i = 1, somma = 0, num, numeri[DIM];
+    double media;
+
+    do
+    {
+        printf("Inserisci un numero:\n");
+        scanf("%d", &num);
+
+        somma = somma + num;
+
+        numeri[i] = num;
+        i++;
+
+    } while (num != 0 && i < DIM);
+
+    media = somma / i;
+    printf("La media è: %f\n", media);
+
+    do
+    {
+        if (numeri[i] > media)
+        {
+            printf("%d ", numeri[i]);
+        }
+        i--;
+    } while (i > 0);
+
+    return 0;
+}
