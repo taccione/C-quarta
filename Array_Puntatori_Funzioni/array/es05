@@ -1,0 +1,38 @@
+/* scrivere in C un programma che concatena in un unica stringa le stringhe
+chieste in input da riga di comando.
+
+
+Esempio:
+$./a.out ciao a tutti gli studenti
+ciao a tutti gli studenti
+*/
+#include <stdio.h>
+#include <string.h>
+
+int main(int argc, char *argv[])
+{
+    int i, len = 0, k = 0, j;
+    for (i = 1; i < argc; i++)
+    {
+        len = len + strlen(argv[i]);
+    }
+
+    len = len + argc - 2; // aggiungo gli spazi alla len
+    char str[len];        // stringa concatenata
+
+    for (i = 1; i < argc; i++)
+    {
+        for (j = 0; j < strlen(argv[i]); j++) // scorre le stringhe di argv
+        {
+            str[k] = argv[i][j];
+            k++;
+        }
+        str[k] = ' ';
+        k++;
+    }
+
+    str[k - 1] = '\0'; // terminatore della stringa concatenata
+    printf("%s", str);
+
+    return 0;
+}

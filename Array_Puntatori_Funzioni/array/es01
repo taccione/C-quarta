@@ -1,0 +1,21 @@
+// Diego Renesto
+// 15 Ottobre 2024
+/* Popolare un array di interi di dimensione 4, stamparne a video il
+contenuto.
+*/
+#include <stdio.h>
+int main(int argc, char *argv[]) {
+    
+    int dimensione = 4;
+    int vettore[dimensione];
+
+    for(int i = 0; i < dimensione; i++) {
+        scanf("%d", &vettore[i]);
+    }
+
+    for(int i = 0; i < dimensione; i++) {
+        printf("%d ", vettore[i]);
+    }
+
+    return 0;
+}
