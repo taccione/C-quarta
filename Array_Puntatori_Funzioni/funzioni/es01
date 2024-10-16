@@ -1,0 +1,23 @@
+// Leggere in input da tastiera due numeri maggiori di 0 e farne la somma.
+#include <stdio.h>
+int sum(int a, int b)
+{
+    int somma = a + b;
+}
+
+int main(int argc, char *argv[])
+{
+
+    int a, b;
+    printf("Inserisci un numero maggiore di 0: ");
+    scanf("%d", &a);
+    printf("Inserisci un numero maggiore di 0: ");
+    scanf("%d", &b);
+
+    if(a > 0 && b >0){
+    int somma = sum(a, b);
+    printf("La somma vale: %d", somma);
+    }
+
+    return 0;
+}
