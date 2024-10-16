@@ -17,16 +17,17 @@ int main(int argc, char *argv[])
 		resto = a[i] % 2;
 		if (resto == 0)
 		{
-			printf("%d\n", a[i]);
+			printf("%d ", a[i]);
 		}
 	}
 
+	printf("\n");
 	for (i = 0; i < dim; i++)
 	{
 		resto = a[i] % 2;
 		if (resto != 0)
 		{
-			printf("%d\n", a[i]);
+			printf("%d ", a[i]);
 		}
 	}
 	return 0;
