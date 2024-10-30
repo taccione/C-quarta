@@ -15,7 +15,7 @@ double bernoulli(int n, double k)
 { // Funzione per calcolare l'n-esimo numero di Bernoulli
     double somma = 0.0;
     for (int i = 1; i <= n; i++)
-        somma += pow(n, k);
+        somma += pow(i, k);
 
     return somma;
 }
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
     scanf("%d", &n);
 
     printf("Inserisci la costante k: ");
-    scanf("%d", &k);
+    scanf("%lf", &k);
 
     // Risultato
     risultato = bernoulli(n, k);
