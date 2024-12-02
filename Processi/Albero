@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+int main(int argc, char *argv[])
+{
+    // Dichiarazione delle variabili
+    int f1 = fork(); // P genera F1
+
+    if (f1 > 0) // dentro P
+    {
+        int f2 = fork();
+        printf("Sono il padre, mio figlio f1 ha PID = %d\n", f1);
+        f2 = fork();
+        if (f2 > 0)
+        {
+            printf("Sono il padre, mio figlio f2 ha PID = %d\n", f2);
+        }
+        else if (f2 == 0) // dentro F2
+        {
+            printf("Sono f2, PID = %d, mio padre ha PID = %d\n", getpid(), getppid());
+            int f4 = fork();
+            if (f4 > 0)
+            {
+                int f5 = fork();
+                if (f5 > 0)
+                {
+                    printf("Sono f2, ho generato f4 con PID = %d e f5 con PID = %d\n", f4, f5);
+                }
+                else if (f5 == 0)
+                {
+                    printf("Sono f5, PID = %d, mio padre ha PID = %d\n", getpid(), getppid());
+                }
+            }
+            else if (f4 == 0)
+            {
+                printf("Sono f4, PID = %d, mio padre ha PID = %d\n", getpid(), getppid());
+            }
+        }
+    }
+    else if (f1 == 0) // dentro F1
+    {
+        printf("Sono f1, PID = %d, mio padre ha PID = %d\n", getpid(), getppid());
+        int f3 = fork(); // F1 genera F3
+        if (f3 > 0)
+        {
+            printf("Sono f1, mio figlio f3 ha PID = %d\n", f3);
+        }
+        else if (f3 == 0)
+        {
+            printf("Sono f3, PID = %d, mio padre ha PID = %d\n", getpid(), getppid());
+        }
+    }
+    else
+    {
+        printf("Errore nella generazione dei figli!");
+    }
+}
