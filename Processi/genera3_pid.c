@@ -1,22 +1,41 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+
 int main(int argc, char *argv[])
 {
-    int p = fork();
+    // Dichiarazione delle variabili
+    int b = fork();
 
-    if (p > 0)
+    printf("Io sono il padre A, il mio PID = %d\n", getpid());
+    if (b > 0) // dentro B
     {
-        printf("Sono il padre A, il mio PID = %d\n", getpid());
+        int c = fork();
+        if (c == 0) // dentro C
+        {
+            printf("Io sono il figlio C, il mio PID = %d, il mio nome è Quo\n", getpid());
+        }
+        else if (c > 0)
+        {
+            int d = fork();
+            if (d == 0) // dentro D
+            {
+                printf("Io sono il figlio D, il mio PID = %d, il mio nome è Qua\n", getpid());
+            }
+        }
+        else
+        {
+            printf("Errore nella generazione del figlio C");
+        }
     }
-    else if (p < 0)
+    else if (b == 0)
     {
-        printf("Errore nella generazione dei figli");
+        printf("Io sono il figlio B, il mio PID = %d, il mio nome è Qui\n", getpid());
     }
     else
     {
-        printf("Sono il figlio B, PID = %d, il mio nome e': Qui\n", getpid());
-        printf("Sono il figlio C, PID = %d, il mio nome e': Quo\n", getpid());
-        printf("Sono il figlio D, PID = %d, il mio nome e': Qua\n", getpid());
+        printf("Errore nella fork del figlio B");
     }
+
+    return 0;
 }
