@@ -54,4 +54,6 @@ int main(int argc, char *argv[])
     {
         printf("Errore nella generazione dei figli!");
     }
+
+    return 0;
 }
