@@ -8,19 +8,19 @@
 int main(int argc, char *argv[])
 {
     // Dichiarazione delle variabili
-    pid_t figlio, padre;
-    figlio = fork();
+    pid_t pid, padre;
+    pid = fork();
 
-    if (figlio == 0) // dentro il figlio
+    if (pid == 0) // dentro il figlio
     {
         padre = getppid();
         printf("Mio padre ha pid: %d\n", padre);
         sleep(5);
-        exit(0);
+        exit(0); // killato il processo figlio
     }
     else
     {
-        wait(&figlio);
+        wait(&pid);
     }
 
     printf("\n\nProgramma terminato\n\n");
