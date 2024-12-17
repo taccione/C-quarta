@@ -1,0 +1,20 @@
+Scrivi il codice sorgente di un programma in cui
+il processo padre P1 richiede all&#39;utente un numero intero n, compreso tra 3 e 10, estremi
+compresi, monitorando il valore immesso e, successivamente, genera due processi figli:
+P2, P3.
+P3 genera due figli: P4 e P5 e, successivamente, visualizza i primi dieci termini della
+tabellina del numero n.
+P5 visualizza il conto alla rovescia reale del numero n (n n-1 ... 0):
+ogni cifra deve essere visualizzata con 1 secondo di ritardo rispetto alla precedente.
+
+La prima cosa che ciascun processo deve fare, appena genera un processo figlio,
+è dichiararsi nel modo seguente:
+&quot;P1: mio PID=..., mio figlio P2 ha PID=...”
+La prima cosa che ciascun processo figlio deve fare appena è stato generato,
+è dichiararsi nel modo seguente:
+&quot;P2: mio PID=..., mio padre P1 ha PID=...&quot;
+
+Ogni volta che un processo visualizza qualcosa sullo schermo deve dichiararsi nel modo
+seguente:
+&quot;P4: quello che P4 deve visualizzare&quot;
+&quot;P5: quello che P4 deve visualizzare&quot;
